@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 20px; }
+        input, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <h1>Sign Up:</h1>
+    <form action="/api/signup" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="gmail">Email:</label>
+        <input type="email" id="gmail" name="gmail" required>
+        
+        <label for="password">Password (8+ characters):</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+        
+        <button type="submit">Create Account</button>
+    </form>
+    
+    <p>Already have an account? <a href="/login">Log in</a></p>
+</body>
+</html>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 20px; }
+        input, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <h1>Log In:</h1>
+  
+  <form action="/api/login" method="post">
+
+    <label for="emailplace">Email: </label>
+    <input type="email" name="gmail" placeholder="Email" id="emailplace" required>
+
+    <label for="passwordplace">Password: </label>
+    <input type="password" name="password" placeholder="Password" id="passwordplace" required>
+
+
+    <button type="submit">Login</button>
+  </form>
+</body>
+</html>

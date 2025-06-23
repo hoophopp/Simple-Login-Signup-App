@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/style.css">
+  <title>All Posts</title>
+</head>
+<body>
+   <div class="topbar">
+    <h1>📓 MoodBoard</h1>
+  </div>
+
+  <div id="post-container">
+    
+  </div>
+
+  <div class="button-container">
+    <a href="postpage.html"><button class="nav-button">Post</button></a>
+    <button class="nav-button">Settings</button>
+    <button class="nav-button">Exit</button>
+  </div>
+
+  <script>
+    fetch('/posts') 
+      .then(response => response.json())
+      .then(posts => {
+        const container = document.getElementById('post-container');
+
+        posts.forEach(post => {
+          const div = document.createElement('div');
+          div.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+            <small>Posted on: ${new Date(post.createdAt).toLocaleString()}</small>
+            <hr>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error('Error fetching posts:', err);
+      });
+  </script>
+</body>
+</html>
